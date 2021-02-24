@@ -1,0 +1,22 @@
+{
+  "name": "PhishChecker",
+  "description": "Phising Detection",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent":true
+  },
+  "permissions": [
+    "alarms",
+    "contextMenus",
+    "storage",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+     "action": {
+    "default_popup": "popup.html"
+  }
+}
