@@ -2,21 +2,18 @@
   "name": "PhishChecker",
   "description": "Phising Detection",
   "version": "1.0",
-  "manifest_version": 2,
-  "background": {
-    "scripts": ["background.js"],
-    "persistent":true
+  "manifest_version": 3,
+  "permissions": ["storage","tabs","activeTab"],
+  "content_scripts": [ 
+  { 
+        "js": [ "jquery.min.js", "script.js" ],
+        "matches": [ "http://*/*", "https://*/*"],
+        "run_at": "document_end"  
+   }],
+   "background": {
+    "service_worker": "background.js"
   },
-  "permissions": [
-    "alarms",
-    "contextMenus",
-    "storage",
-    "notifications",
-    "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
-  ],
-     "action": {
+  "action": {
     "default_popup": "popup.html"
   }
 }
